@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+/* 최소 768이상 ~ 1024px */
+@media screen and (min-width:768px) and (max-width:1024px) {
+
+  /* 상단헤더서식 */
+  .header_inner{
+    width:100%;
+  }
+
+  .total_btn{
+    position:absolute;
+    right:10px;
+    bottom:0px;
+    z-index:101;
+    display:inline;
+  }
+  .total_btn > i.fas{
+    padding:6px;
+    font-size:2rem; /* 1rem = 16px, 2rem 16*2=32px */
+  }
+/* 전체메뉴를 클릭시 체크박스가 체크되면서 체크박스의 바로뒤 헤더의 자손 .gnb의 높이를 변경하여 서브가 보이게한다. */
+  #toggle:checked + header > .gnb{
+    height:260px;
+  }
+  .gnb{
+    transition:none;
+    z-index:10;
+  }
+  .gnb > ul{
+    width:100%;
+  }
+  .gnb > ul > li:last-child{padding-right:50px;}
+  .gnb > ul > li{
+    margin:0px 1.3%;
+  }
+  .gnb > ul > li > a{
+    font-size:1rem;
+  }
+
+  /* 메인콘텐츠 서식 */
+  .slide{width:100%;}
+  .cont{
+    width:100%;
+    display:grid;
+    box-sizing: border-box;
+    grid-gap:1.9531%;
+    padding:15px 2.1484% 50px 2.1484%;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "n_item ad"
+      "c_b_story c_b_story"
+      "notice news"
+      "store store";
+  }
+  .n_item img, .ad img{
+    width:100%;max-height:430px;
+  }
+  .n_item{
+    text-align:center;
+    grid-area: n_item;
+  }
+  .c_b_story{
+    grid-area:c_b_story;
+  }
+  .c_b_story img{width:50%;}
+  .c_b_story > .brand{
+    float:left;
+    width:50%;
+    background-size:100%;
+    background-repeat:no-repeat;
+    height:180px;
+  }
+  .ad{
+    text-align:center;
+    grid-area:ad;
+  }
+  .notice{
+    height:150px;
+    grid-area:notice;
+  }
+  .store{
+    grid-area:store;
+    height:150px;
+  }
+  .store a{
+    margin:0px auto;
+  }
+  .news{
+    height:150px;
+    grid-area:news;
+  }
+  article > ul > li{
+    width:100%;
+  }
+
+  /* 푸터영역 서식 */
+  footer{
+    width:100%;
+  }
+
+  /* 최소 768 ~ 840사이 해상도일 때 푸터에 여백을 추가한다. */
+  @media screen and (min-width:768px) and (max-width:840px) {
+    footer{padding-top:40px;}
+    .sns{
+      width:146px;
+      left:50%;transform:translate(-50%, -10%);
+    }
+  }
+
+
+}
